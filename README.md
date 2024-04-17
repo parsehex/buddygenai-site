@@ -1,4 +1,6 @@
-# Deploy Vite app to GitHub Pages using GitHub Actions
+# BuddyGen AI Site
+
+![logo](./src/logo.png)
 
 ## Video tutorial
 
