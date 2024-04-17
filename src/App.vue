@@ -1,8 +1,8 @@
 <template>
 	<div class="App">
 		<header class="App-header">
-			<img :src="logo" class="App-logo" alt="logo" />
-			<h1>
+			<div class="App-logo"></div>
+			<h1 style="user-select: none">
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</h1>
@@ -11,8 +11,6 @@
 </template>
 
 <script setup lang="ts">
-// @ts-ignore
-import logo from './logo.png';
 import './App.css';
 </script>
 
