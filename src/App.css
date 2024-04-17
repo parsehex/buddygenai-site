@@ -5,8 +5,8 @@
 .App-logo {
 	background-image: url('./logo.png');
 	background-size: contain;
-	width: 300px;
-	height: 300px;
+	width: 350px;
+	height: 350px;
 	pointer-events: none;
 	border-radius: 50%;
 }
