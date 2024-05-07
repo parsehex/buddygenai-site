@@ -2,7 +2,7 @@
 	<div class="App mt-4">
 		<header class="App-header">
 			<div class="App-logo"></div>
-			<h1 style="user-select: none">
+			<h1 class="text-4xl font-bold select-none">
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</h1>
@@ -14,7 +14,7 @@
 					<a
 						href="https://github.com/parsehex/BuddyGenAI/releases/tag/v0.1.0-beta"
 						target="_blank"
-						style="color: #dcdcdc; font-size: 1.5rem"
+						class="text-lg underline text-gray-400"
 					>
 						v0.1.0-beta - Demo Release
 					</a>
@@ -22,7 +22,7 @@
 					<a
 						href="https://github.com/parsehex/BuddyGenAI/blob/main/docs/how-to-setup.md"
 						target="_blank"
-						style="color: #dcdcdc; font-size: 1.25rem"
+						class="underline text-gray-400"
 					>
 						How to setup app
 					</a>
@@ -31,15 +31,68 @@
 		</div>
 		<br />
 		<h2 style="color: #dcdcdc">Gallery</h2>
-		<Carousel>
+		<br />
+		<!-- <Carousel>
 			<CarouselPrevious />
 			<CarouselNext />
 			<CarouselContent>
 				<CarouselItem class="md:basis-1/2 lg:basis-1/3">
-					<img src="./cover.png" alt="cover" />
+					<img src="./images/cover.png" alt="cover" />
+					<img src="./images/chat.png" alt="chat" />
+					<img src="./images/setup - 4 result.png" alt="setup" />
+				</CarouselItem>
+			</CarouselContent>
+		</Carousel> -->
+		<Carousel class="relative w-full max-w-xmd">
+			<CarouselPrevious class="relative" />
+			<CarouselNext class="relative" />
+			<CarouselContent>
+				<CarouselItem v-for="(pic, index) in pics" :key="index">
+					<div class="p-1">
+						<Card class="bg-gray-800 w-full h-full">
+							<CardContent
+								class="flex aspect-auto items-center justify-center p-2"
+							>
+								<!-- <span class="text-4xl font-semibold">{{ index + 1 }}</span> -->
+								<img :src="pic" alt="cover" />
+							</CardContent>
+						</Card>
+					</div>
 				</CarouselItem>
 			</CarouselContent>
 		</Carousel>
+		<br />
+		<h2 style="color: #dcdcdc; margin-bottom: 0">Road Map</h2>
+		<p
+			style="
+				color: #dcdcdc;
+				text-align: center;
+				max-width: 35%;
+				margin: 1em auto;
+				font-style: italic;
+				font-weight: bold;
+			"
+		>
+			Listed features are not in order or guaranteed.
+		</p>
+		<ul
+			style="
+				color: #dcdcdc;
+				text-align: center;
+				margin: 0 auto;
+				max-width: 35%;
+				list-style-type: square;
+			"
+		>
+			<li>Speak your messages using voice/microphone</li>
+			<li>Buddies respond with voice/Text-To-Speech</li>
+			<li>Buddies send picture(s) along with their message</li>
+			<li>Options to easily customize your Buddy's behavior</li>
+			<li>Better PC support - add support for Linux, Mac</li>
+			<li>Buddies have memory of their other chats</li>
+			<li>Buddy consistency/quality</li>
+			<li>Better/easier model management</li>
+		</ul>
 	</div>
 	<p
 		style="
@@ -55,7 +108,6 @@
 </template>
 
 <script setup lang="ts">
-import './App.css';
 import {
 	Carousel,
 	CarouselContent,
@@ -63,6 +115,13 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from '../components/ui/carousel';
+import { Card, CardContent } from '../components/ui/card';
+
+const pics = [
+	'/images/cover.png',
+	'/images/chat.png',
+	'/images/setup - 4 result.png',
+];
 </script>
 
 <style>
