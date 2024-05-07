@@ -1,5 +1,5 @@
 <template>
-	<div class="App">
+	<div class="App mt-4">
 		<header class="App-header">
 			<div class="App-logo"></div>
 			<h1 style="user-select: none">
@@ -9,12 +9,20 @@
 		</header>
 
 		<div class="App-body">
-			<div class="App-body-left">
+			<div>
 				<div class="App-body-left-title">
+					<a
+						href="https://github.com/parsehex/BuddyGenAI/releases/tag/v0.1.0-beta"
+						target="_blank"
+						style="color: #dcdcdc; font-size: 1.5rem"
+					>
+						v0.1.0-beta - Demo Release
+					</a>
+					<br />
 					<a
 						href="https://github.com/parsehex/BuddyGenAI/blob/main/docs/how-to-setup.md"
 						target="_blank"
-						style="color: #dcdcdc; font-size: 1.5rem"
+						style="color: #dcdcdc; font-size: 1.25rem"
 					>
 						How to setup app
 					</a>
@@ -22,7 +30,16 @@
 			</div>
 		</div>
 		<br />
-		<img src="./cover.png" alt="cover" style="width: 75%" />
+		<h2 style="color: #dcdcdc">Gallery</h2>
+		<Carousel>
+			<CarouselPrevious />
+			<CarouselNext />
+			<CarouselContent>
+				<CarouselItem class="md:basis-1/2 lg:basis-1/3">
+					<img src="./cover.png" alt="cover" />
+				</CarouselItem>
+			</CarouselContent>
+		</Carousel>
 	</div>
 	<p
 		style="
@@ -39,6 +56,13 @@
 
 <script setup lang="ts">
 import './App.css';
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from '../components/ui/carousel';
 </script>
 
 <style>
