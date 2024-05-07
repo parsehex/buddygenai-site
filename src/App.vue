@@ -62,7 +62,7 @@
 			</CarouselContent>
 		</Carousel>
 		<br />
-		<h2 style="color: #dcdcdc; margin-bottom: 0">Road Map</h2>
+		<h2 style="color: #dcdcdc; margin-bottom: 0" class="text-2xl">Road Map</h2>
 		<p
 			style="
 				color: #dcdcdc;
