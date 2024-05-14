@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<br />
-		<h2 style="color: #dcdcdc">Gallery</h2>
+		<h2>Gallery</h2>
 		<br />
 		<!-- <Carousel>
 			<CarouselPrevious />
@@ -62,10 +62,9 @@
 			</CarouselContent>
 		</Carousel>
 		<br />
-		<h2 style="color: #dcdcdc; margin-bottom: 0" class="text-2xl">Road Map</h2>
+		<h2 style="margin-bottom: 0" class="text-2xl">Road Map</h2>
 		<p
 			style="
-				color: #dcdcdc;
 				text-align: center;
 				max-width: 35%;
 				margin: 1em auto;
@@ -77,7 +76,6 @@
 		</p>
 		<ul
 			style="
-				color: #dcdcdc;
 				text-align: center;
 				margin: 0 auto;
 				max-width: 35%;
@@ -94,15 +92,7 @@
 			<li>Better/easier model management</li>
 		</ul>
 	</div>
-	<p
-		style="
-			text-align: center;
-			padding: 10px;
-			background-color: #282c34;
-			color: #dcdcdc;
-			text-align: center;
-		"
-	>
+	<p style="text-align: center; padding: 10px; text-align: center">
 		Copyright © 2024 Thomas Mays
 	</p>
 </template>
@@ -127,7 +117,7 @@ const pics = [
 <style>
 html,
 body {
-	background-color: #282c34;
+	/* background-color: #282c34; */
 }
 
 .App {
@@ -141,7 +131,6 @@ body {
 	width: 350px;
 	height: 350px;
 	pointer-events: none;
-	border-radius: 50%;
 	margin: 0 auto;
 }
 
