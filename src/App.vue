@@ -108,9 +108,12 @@ import {
 import { Card, CardContent } from '../components/ui/card';
 
 const pics = [
-	'/images/cover.png',
-	'/images/chat.png',
-	'/images/setup - 4 result.png',
+	'/images/home page.png',
+	'/images/dark mode.png',
+	'/images/buddy list.png',
+	// '/images/cover.png',
+	// '/images/chat.png',
+	// '/images/setup - 4 result.png',
 ];
 </script>
 
