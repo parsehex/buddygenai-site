@@ -86,7 +86,7 @@
 			<li>Buddies respond with voice/Text-To-Speech</li>
 			<li>Buddies send picture(s) along with their message</li>
 			<li>Options to easily customize your Buddy's behavior</li>
-			<li>Better PC support - add support for Linux, Mac</li>
+			<li>Better PC support + add support for Linux, Mac</li>
 			<li>Buddies have memory of their other chats</li>
 			<li>Buddy consistency/quality</li>
 			<li>Better/easier model management</li>
