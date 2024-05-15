@@ -90,6 +90,7 @@
 			<li>Buddies have memory of their other chats</li>
 			<li>Buddy consistency/quality</li>
 			<li>Better/easier model management</li>
+			<li>Play game(s) with your Buddy</li>
 		</ul>
 	</div>
 	<p style="text-align: center; padding: 10px; text-align: center">
