@@ -12,11 +12,11 @@
 			<div>
 				<div class="App-body-left-title">
 					<a
-						href="https://github.com/parsehex/BuddyGenAI/releases/tag/v0.1.0-beta"
+						href="https://github.com/parsehex/BuddyGenAI/releases/tag/v0.1.1-beta"
 						target="_blank"
-						class="text-lg underline text-gray-400"
+						class="text-xl underline text-gray-400"
 					>
-						v0.1.0-beta - Demo Release
+						v0.1.1-beta - More demo-y release
 					</a>
 					<br />
 					<a
