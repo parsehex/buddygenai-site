@@ -2,7 +2,7 @@
 	<div class="App mt-4">
 		<header class="App-header">
 			<div class="App-logo"></div>
-			<h1 class="text-4xl font-bold select-none">
+			<h1 class="text-4xl font-bold select-none my-2">
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</h1>
@@ -12,11 +12,11 @@
 			<div>
 				<div class="App-body-left-title">
 					<a
-						href="https://github.com/parsehex/BuddyGenAI/releases/tag/v0.1.1-beta"
+						href="https://github.com/parsehex/BuddyGenAI/releases/tag/v0.1.2-beta"
 						target="_blank"
 						class="text-xl underline text-gray-400"
 					>
-						v0.1.1-beta - More demo-y release
+						v0.1.2-beta
 					</a>
 					<br />
 					<a
@@ -24,7 +24,7 @@
 						target="_blank"
 						class="underline text-gray-400"
 					>
-						How to setup app
+						How to setup the app
 					</a>
 				</div>
 			</div>
@@ -32,17 +32,6 @@
 		<br />
 		<h2>Gallery</h2>
 		<br />
-		<!-- <Carousel>
-			<CarouselPrevious />
-			<CarouselNext />
-			<CarouselContent>
-				<CarouselItem class="md:basis-1/2 lg:basis-1/3">
-					<img src="./images/cover.png" alt="cover" />
-					<img src="./images/chat.png" alt="chat" />
-					<img src="./images/setup - 4 result.png" alt="setup" />
-				</CarouselItem>
-			</CarouselContent>
-		</Carousel> -->
 		<Carousel class="relative w-full max-w-xmd">
 			<CarouselPrevious class="relative" />
 			<CarouselNext class="relative" />
@@ -53,7 +42,6 @@
 							<CardContent
 								class="flex aspect-auto items-center justify-center p-2"
 							>
-								<!-- <span class="text-4xl font-semibold">{{ index + 1 }}</span> -->
 								<img :src="pic" alt="cover" />
 							</CardContent>
 						</Card>
@@ -83,7 +71,7 @@
 			"
 		>
 			<li>Speak your messages using voice/microphone</li>
-			<li>Buddies respond with voice/Text-To-Speech</li>
+			<li>Buddies respond with voice/Text to Speech</li>
 			<li>Buddies send picture(s) along with their message</li>
 			<li>Options to easily customize your Buddy's behavior</li>
 			<li>Better PC support + add support for Linux, Mac</li>
@@ -121,7 +109,8 @@ const pics = [
 <style>
 html,
 body {
-	/* background-color: #282c34; */
+	background-color: #282c34;
+	color: #dcdcdc;
 }
 
 .App {
@@ -132,10 +121,15 @@ body {
 .App-logo {
 	background-image: url('./logo.png');
 	background-size: contain;
+	/* background-color: lightgray; */
+	/* use better light gray */
+	background-color: #f0f0f0;
 	width: 350px;
 	height: 350px;
 	pointer-events: none;
-	margin: 0 auto;
+	margin: 0.5em auto;
+	padding: 20px;
+	border-radius: 15%;
 }
 
 .App-body-left-title {
