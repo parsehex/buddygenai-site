@@ -899,11 +899,6 @@ body {
   line-height: 1.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -940,11 +935,6 @@ body {
   color: hsl(var(--destructive-foreground));
 }
 
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
 .text-muted-foreground {
   color: hsl(var(--muted-foreground));
 }
@@ -959,10 +949,6 @@ body {
 
 .text-secondary-foreground {
   color: hsl(var(--secondary-foreground));
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .underline-offset-4 {
