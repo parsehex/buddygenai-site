@@ -11,21 +11,7 @@
 		<div class="App-body">
 			<div>
 				<div class="App-body-left-title">
-					<a
-						href="https://github.com/parsehex/BuddyGenAI/releases/tag/v0.1.2-beta"
-						target="_blank"
-						class="text-xl underline text-gray-400"
-					>
-						v0.1.2-beta
-					</a>
-					<br />
-					<a
-						href="https://github.com/parsehex/BuddyGenAI/blob/main/docs/how-to-setup.md"
-						target="_blank"
-						class="underline text-gray-400"
-					>
-						How to setup the app
-					</a>
+					<!--  -->
 				</div>
 			</div>
 		</div>
