@@ -20,6 +20,16 @@
 					class="mx-auto"
 					alt="cover"
 				/>
+				<iframe
+					frameborder="0"
+					src="https://itch.io/embed/2739332"
+					width="552"
+					height="167"
+					class="mx-auto mt-2"
+					><a href="https://parsehex.itch.io/buddygenai"
+						>BuddyGenAI by parsehex</a
+					></iframe
+				>
 			</div>
 		</div>
 		<!-- <br />
