@@ -1,8 +1,10 @@
 <template>
-	<div class="App mt-4">
+	<div class="App">
 		<header class="App-header">
-			<div class="App-logo"></div>
-			<h1 class="text-4xl font-bold select-none my-2">
+			<!-- <div class="App-logo"></div> -->
+			<h1
+				class="text-4xl font-bold select-none my-2 bg-gray-600 inline-block mt-0 rounded-b px-1"
+			>
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</h1>
@@ -13,9 +15,14 @@
 				<div class="App-body-left-title">
 					<!--  -->
 				</div>
+				<img
+					src="/images/buddygen-itchio-cover.png"
+					class="mx-auto"
+					alt="cover"
+				/>
 			</div>
 		</div>
-		<br />
+		<!-- <br />
 		<h2>Gallery</h2>
 		<br />
 		<Carousel class="relative w-full max-w-xmd">
@@ -34,7 +41,7 @@
 					</div>
 				</CarouselItem>
 			</CarouselContent>
-		</Carousel>
+		</Carousel> -->
 		<br />
 		<h2 style="margin-bottom: 0" class="text-2xl">Road Map</h2>
 		<p
@@ -56,12 +63,17 @@
 				list-style-type: square;
 			"
 		>
-			<li>Speak your messages using voice/microphone</li>
-			<li>Buddies respond with voice/Text to Speech</li>
-			<li>Buddies send picture(s) along with their message</li>
+			<li class="line-through">Speak your messages using voice/microphone</li>
+			<li class="line-through">Buddies respond with voice/Text to Speech</li>
+			<li class="line-through">
+				Buddies send picture(s) along with their message
+			</li>
 			<li>Options to easily customize your Buddy's behavior</li>
-			<li>Better PC support + add support for Linux, Mac</li>
-			<li>Buddies have memory of their other chats</li>
+			<li>Better PC support</li>
+			<li>Support for Linux, Mac</li>
+			<li>
+				Buddies have memory of their other chats and can learn facts about you
+			</li>
 			<li>Buddy consistency/quality</li>
 			<li>Better/easier model management</li>
 			<li>Play game(s) with your Buddy</li>
@@ -95,7 +107,7 @@ const pics = [
 <style>
 html,
 body {
-	background-color: #282c34;
+	background-color: #030712;
 	color: #dcdcdc;
 }
 
