@@ -8,6 +8,9 @@
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</h1>
+			<p style="margin: 0; font-style: italic; font-weight: bold">
+				Private Access Only
+			</p>
 		</header>
 
 		<div class="App-body">
@@ -20,19 +23,14 @@
 					class="mx-auto"
 					alt="cover"
 				/>
-				<iframe
-					frameborder="0"
-					src="https://itch.io/embed/2739332"
-					width="552"
-					height="167"
-					class="mx-auto mt-2"
-					><a href="https://parsehex.itch.io/buddygenai"
-						>BuddyGenAI by parsehex</a
-					></iframe
-				>
+				<p style="max-width: 35%; margin: 1em auto">
+					BuddyGen AI is an app for people with no buddies.
+					<br />
+					It's open source if you can find the repo and build it.
+				</p>
 			</div>
 		</div>
-		<!-- <br />
+		<br />
 		<h2>Gallery</h2>
 		<br />
 		<Carousel class="relative w-full max-w-xmd">
@@ -51,7 +49,7 @@
 					</div>
 				</CarouselItem>
 			</CarouselContent>
-		</Carousel> -->
+		</Carousel>
 		<br />
 		<h2 style="margin-bottom: 0" class="text-2xl">Road Map</h2>
 		<p
@@ -107,7 +105,9 @@ import { Card, CardContent } from '../components/ui/card';
 const pics = [
 	'/images/home page.png',
 	'/images/dark mode.png',
+	'/images/EHQjjn.png',
 	'/images/buddy list.png',
+	'/images/JJUK2v.png',
 	// '/images/cover.png',
 	// '/images/chat.png',
 	// '/images/setup - 4 result.png',
