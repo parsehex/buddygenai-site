@@ -1,4 +1,4 @@
-# BuddyGen AI Site
+# BuddyGenAI Site
 
 ![logo](./src/logo.png)
 
