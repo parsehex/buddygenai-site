@@ -8,9 +8,6 @@
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</h1>
-			<p style="margin: 0; font-style: italic; font-weight: bold">
-				Private Access Only
-			</p>
 		</header>
 
 		<div class="App-body">
@@ -24,14 +21,21 @@
 					alt="cover"
 				/>
 				<p style="max-width: 35%; margin: 1em auto">
-					BuddyGen AI is an app for people with no buddies.
+					BuddyGen AI is an app for people that don't do much socializing. It's
+					meant to emulate chatting with real people in a safe environment.
 					<br />
-					It's open source if you can find the repo and build it.
+					It's a way to practice socializing, or just to have someone to talk
+					to. It's also a great way to get a second opinion on something, or to
+					get advice.
+					<br />
+					<a href="/preview.html" class="bg-gray-600 p-1 rounded">
+						App Preview
+					</a>
 				</p>
 			</div>
 		</div>
 		<br />
-		<h2>Gallery</h2>
+		<h2 class="text-2xl">Screenshots</h2>
 		<br />
 		<Carousel class="relative w-full max-w-xmd">
 			<CarouselPrevious class="relative" />
