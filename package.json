@@ -7,22 +7,27 @@
     "build": "npm run build-css && vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "build-css": "npx tailwindcss build -i src/index.css -o public/styles.css"
+    "build-css": "npx tailwindcss build -i src/index.css -o public/styles.css",
+    "build-preview-css": "npx tailwindcss build -i src-preview/index.css -o public/preview.css"
   },
   "dependencies": {
-    "@vueuse/core": "^10.9.0",
+    "@vueuse/core": "^10.11.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "embla-carousel": "^8.0.4",
     "embla-carousel-vue": "^8.0.4",
     "lucide-vue-next": "^0.378.0",
+    "pinia": "^2.2.6",
     "radix-vue": "^1.7.3",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "vite-tsconfig-paths": "^4.3.2",
-    "vue": "^3.4.23"
+    "vue": "^3.4.23",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@types/node": "^22.9.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
