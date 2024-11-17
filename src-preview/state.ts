@@ -1,14 +1,17 @@
 import { defineStore } from 'pinia';
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, onBeforeMount } from 'vue';
 import type {
 	ChatMessage,
+	ChatThread,
 	MergedChatThread,
 	BuddyVersionMerged,
 	SQLiteVal,
-} from './types/db';
-
-// NOTE: This is a copy of the app's store to be used in the preview.
-//   Its functionality should all be no-op or mocked.
+} from '@/lib/api/types-db';
+import { api } from '@/lib/api';
+import buddiesData from '@/lib/data/buddies.json';
+import modelsData from '@/lib/data/models.json';
+import threadsData from '@/lib/data/threads.json';
+import settingsData from '@/lib/data/settings.json';
 
 type Provider = 'external' | 'local' | 'custom';
 interface Settings {
@@ -43,34 +46,49 @@ export const useAppStore = defineStore('app', () => {
 		threadMessages.value.push(...messages);
 	};
 
-	const chatModels = ref(['fake-gpt-3.5-turbo'] as string[]);
-	const imageModels = ref(['fake-dall-e-3'] as string[]);
-	const ttsModels = ref(['fake-alloy'] as string[]);
-	const whisperModels = ref([] as string[]);
-
-	const buddies = ref<BuddyVersionMerged[]>([
-		{
-			id: 'fake-buddy',
-			created: Date.now(),
-			updated: null,
-			tts_voice: 'fake-alloy',
-			profile_pic: null,
-			profile_pic_prompt: null,
-			profile_pic_use_prompt: false,
-			appearance_options: null,
-			selected_appearance_options: null,
-			current_version_id: 'fake-buddy-version',
-			name: 'Eric',
-			description: 'friendly, talkative',
-			persona_id: 'fake-persona',
-			version: 1,
-		},
-	]);
-	const settings = ref({} as Settings); // TODO
-	const threads = ref([] as MergedChatThread[]); // TODO
+	const chatModels = ref(modelsData.chat as string[]);
+	const imageModels = ref(modelsData.image as string[]);
+	const ttsModels = ref(modelsData.tts as string[]);
+	const whisperModels = ref(modelsData.whisper as string[]);
+	const buddies = ref(buddiesData as BuddyVersionMerged[]);
+	const settings = ref(settingsData as Settings);
+	const threads = ref(threadsData as MergedChatThread[]);
 
 	const isExternalProvider = computed(() => true);
 
+	// onBeforeMount(async () => {
+	// 	const [cM, iM, tM, wM, p, s, t] = await Promise.all([
+	// 		api.model.getAll('chat'),
+	// 		api.model.getAll('image'),
+	// 		api.model.getAll('tts'),
+	// 		api.model.getAll('whisper'),
+	// 		api.buddy.getAll(),
+	// 		api.setting.getAll(),
+	// 		api.thread.getAll(),
+	// 	]);
+
+	// 	if (cM) {
+	// 		chatModels.value.length = 0;
+	// 		chatModels.value.push(...cM);
+	// 	}
+	// 	if (iM) {
+	// 		imageModels.value.length = 0;
+	// 		imageModels.value.push(...iM);
+	// 	}
+	// 	if (p) {
+	// 		buddies.value.length = 0;
+	// 		buddies.value.push(...p);
+	// 	}
+	// 	if (s) Object.assign(settings.value, s);
+	// 	if (t) {
+	// 		threads.value.length = 0;
+	// 		threads.value.push(...t);
+	// 	}
+	// });
+
+	// we might not need these update funcs
+	// i think we'll just be directly updating the state here
+	//   so we won't need to get updated data from the non-existent db
 	const updateChatModels = async () => {
 		return chatModels.value;
 	};
@@ -87,13 +105,17 @@ export const useAppStore = defineStore('app', () => {
 		certain?: 'chat' | 'image' | 'tts' | 'whisper'
 	) => {
 		if (certain === 'chat') {
-			return { chatModels: await updateChatModels() };
+			const res = await updateChatModels();
+			return { chatModels: res };
 		} else if (certain === 'image') {
-			return { imageModels: await updateImageModels() };
+			const res = await updateImageModels();
+			return { imageModels: res };
 		} else if (certain === 'tts') {
-			return { ttsModels: await updateTTSModels() };
+			const res = await updateTTSModels();
+			return { ttsModels: res };
 		} else if (certain === 'whisper') {
-			return { whisperModels: await updateWhisperModels() };
+			const res = await updateWhisperModels();
+			return { whisperModels: res };
 		}
 		const [chat, image, tts, whisper] = await Promise.all([
 			updateChatModels(),
@@ -116,26 +138,11 @@ export const useAppStore = defineStore('app', () => {
 		return settings.value;
 	};
 	const saveSettings = async (newVal: Record<string, SQLiteVal>) => {
-		// 👍
+		//
 	};
 	const updateThreads = async () => {
 		return threads.value;
 	};
-
-	watch(
-		settings.value,
-		async (newVal) => {
-			if (firstRun) {
-				firstRun = false;
-				return;
-			}
-
-			console.log('settings changed', newVal);
-
-			await saveSettings(newVal);
-		},
-		{ deep: true }
-	);
 
 	const chatServerRunning = ref(false);
 	const chatServerStarting = ref(false);
@@ -143,30 +150,11 @@ export const useAppStore = defineStore('app', () => {
 		chatServerRunning.value = true;
 	};
 
-	// TODO once started, increase progress every 100ms
-	//   until progress is 1, then set generating to false
-	const imgGenerating = ref(false);
-	const updateImgGenerating = (val: boolean) => {
-		imgGenerating.value = val;
-	};
-	const imgProgress = ref(0);
-	const updateImgProgress = (val: number) => {
-		imgProgress.value = val;
-	};
-
 	// newHere if db is fresh or if there are no threads or buddies
-	const newHere = computed(
-		() =>
-			!!+settings.value.fresh_db ||
-			(!threads.value.length && !buddies.value.length)
-	);
+	const newHere = computed(() => false);
 
 	const proceed = ref(false);
-
-	// TODO
-	const isModelsSetup = computed(() => {
-		return true;
-	});
+	const isModelsSetup = computed(() => true);
 
 	const modelProvider = computed({
 		get: () => {
@@ -199,6 +187,15 @@ export const useAppStore = defineStore('app', () => {
 		saveSettings,
 		updateThreads,
 
+		setThreads: (newThreads: MergedChatThread[]) => {
+			threads.value.length = 0;
+			threads.value.push(...newThreads);
+		},
+		setBuddies: (newBuddies: BuddyVersionMerged[]) => {
+			buddies.value.length = 0;
+			buddies.value.push(...newBuddies);
+		},
+
 		isExternalProvider,
 		proceed,
 		isModelsSetup,
@@ -206,11 +203,6 @@ export const useAppStore = defineStore('app', () => {
 		chatServerRunning,
 		chatServerStarting,
 		updateChatServerRunning,
-
-		imgGenerating,
-		updateImgGenerating,
-		imgProgress,
-		updateImgProgress,
 
 		toggleAutoStartServer: () => {
 			settings.value.auto_start_server = settings.value.auto_start_server

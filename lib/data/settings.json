@@ -1,0 +1,11 @@
+{
+	"user_name": "Thomas",
+	"chat_image_enabled": 1,
+	"chat_image_quality": "medium",
+	"fresh_db": 0,
+	"n_gpu_layers": 99,
+	"auto_send_stt": 0,
+	"auto_read_chat": 0,
+	"auto_start_server": 0,
+	"skip_start_dialog": 0
+}

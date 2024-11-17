@@ -10,6 +10,7 @@ module.exports = {
 		'./index.html',
 		'./components/**/*.{ts,tsx,vue}',
 		'./src/**/*.{ts,tsx,vue}',
+		'./src-preview/**/*.{ts,tsx,vue}',
 	],
 
 	theme: {

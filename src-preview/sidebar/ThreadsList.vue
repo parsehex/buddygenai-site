@@ -57,10 +57,9 @@ const renameClicked = (threadId: string) => {
 const handleRename = async () => {
 	if (!editingThreadName.value) return;
 
-	// TODO
-	// await api.thread.updateOne(rightClickedId.value, {
-	// 	name: editingThreadName.value,
-	// });
+	await api.thread.updateOne(rightClickedId.value, {
+		name: editingThreadName.value,
+	});
 	editingThreadName.value = '';
 
 	await updateThreads();
@@ -72,8 +71,7 @@ const shouldRedirect = (deletedThreadId: string) => {
 
 const doDeleteThread = async (threadId: string) => {
 	console.log('deleting thread', threadId);
-	// TODO
-	// await api.thread.removeOne(threadId);
+	await api.thread.removeOne(threadId);
 
 	const newThreads = await updateThreads();
 	if (shouldRedirect(threadId)) {
@@ -86,18 +84,21 @@ const doDeleteThread = async (threadId: string) => {
 	}
 };
 
-// TODO this is a bandaid fix
-watch(route, async () => {
-	await updateThreads();
-});
-
 const goToThread = async (threadId: string) => {
-	// router.push(`/chat/${threadId}`);
-	// const messages = await api.message.getAll(threadId);
-	const messages = [] as any[];
+	router.push(`/chat/${threadId}`);
+	const thread = store.threads.find(
+		(thread: ChatThread) => thread.id === threadId
+	);
+	if (!thread) {
+		console.error(`Couldn't find thread with id ${threadId} to go to`);
+		return;
+	}
+
+	// @ts-ignore
+	const messages = thread.messages || [];
 	if (!messages) return;
 	console.log('setting thread messages', messages);
-	// store.setThreadMessages(messages);
+	store.setThreadMessages(messages);
 
 	await router.push(`/chat/${threadId}`);
 };

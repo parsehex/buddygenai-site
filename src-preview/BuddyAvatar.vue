@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch, onMounted, toRefs } from 'vue';
-import type { BuddyVersionMerged } from './types/db';
+import type { BuddyVersionMerged } from '@/lib/api/types-db';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const props = defineProps<{
