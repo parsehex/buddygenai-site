@@ -30,7 +30,7 @@
 					alt="cover"
 				/>
 				<p style="max-width: 35%; margin: 1em auto">
-					BuddyGen AI is an app for people that don't socialize much. It's meant
+					BuddyGenAI is an app for people that don't socialize much. It's meant
 					to emulate chatting with real people in a safe and private
 					environment.
 					<br />
@@ -42,6 +42,13 @@
 		</div>
 		<br />
 		<h2 class="text-2xl">Screenshots</h2>
+		<p>
+			You can
+			<a href="/preview.html" class="text-blue-400 underline">
+				{{ 'view the app preview' }}
+			</a>
+			for a better experience.
+		</p>
 		<br />
 		<Carousel class="relative w-full max-w-xmd">
 			<CarouselPrevious class="relative" />
