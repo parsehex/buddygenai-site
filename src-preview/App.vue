@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/resizable';
 import { useColorMode } from '@vueuse/core';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 useColorMode();
 
@@ -31,52 +32,40 @@ const container = ref<HTMLElement | null>(null);
 	>
 		<TooltipProvider>
 			<Suspense>
-				<ResizablePanelGroup direction="horizontal">
-					<ResizablePanel
-						class="min-w-min"
-						:default-size="22"
-						:min-size="20"
-						:max-size="35"
-					>
-						<Sidebar />
-					</ResizablePanel>
-					<ResizableHandle with-handle />
-					<ResizablePanel>
-						<RouterView />
-					</ResizablePanel>
-				</ResizablePanelGroup>
+				<div>
+					<Alert variant="info" class="p-2 rounded-none">
+						<AlertDescription class="text-center">
+							This is a preview of BuddyGenAI.
+							<br />
+							Go to
+							<RouterLink to="/">Home Page</RouterLink> ||
+							<a href="/">Back to BuddyGenAI.com</a>
+						</AlertDescription>
+					</Alert>
+					<ResizablePanelGroup direction="horizontal">
+						<ResizablePanel
+							class="min-w-min"
+							:default-size="22"
+							:min-size="20"
+							:max-size="35"
+						>
+							<Sidebar />
+						</ResizablePanel>
+						<ResizableHandle with-handle />
+						<ResizablePanel>
+							<RouterView />
+						</ResizablePanel>
+					</ResizablePanelGroup>
+				</div>
 			</Suspense>
 			<Toaster />
 		</TooltipProvider>
 	</div>
 </template>
 
-<style>
-html,
-body {
-	@apply h-screen w-screen overflow-y-hidden;
-}
-.info {
-	@apply bg-blue-400 text-white font-bold;
-}
-.border-info {
-	@apply border-blue-700;
-}
-.info-foreground {
-	@apply text-blue-400 bg-white;
-}
-
-.success {
-	@apply bg-green-400 text-black font-bold;
-}
-.border-success {
-	@apply border-green-700;
-}
-.success-foreground {
-	@apply text-green-400 bg-white;
-}
-
-.magic {
-	@apply bg-purple-400 text-black font-bold;
+<style scoped>
+a {
+	font-weight: bold;
+	text-decoration: underline;
 }
 </style>
