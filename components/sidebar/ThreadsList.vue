@@ -20,12 +20,10 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { useAppStore } from '../state';
-import type { ChatThread } from '../types/db';
+import { useAppStore } from '@/stores/main';
+import type { ChatThread } from '@/lib/api/types-db';
 import { api } from '@/lib/api';
-import { router } from '../router';
-
-// TODO add option to make temporary chat
+import { router } from '@/lib/router';
 
 const route = useRoute();
 const isThreadSelected = (threadId: string) =>
@@ -33,8 +31,6 @@ const isThreadSelected = (threadId: string) =>
 
 const { updateThreads } = useAppStore();
 const store = useAppStore();
-
-// TODO add option to fork a thread
 
 const editingThreadName = ref('');
 const rightClickedId = ref('');
@@ -65,16 +61,12 @@ const handleRename = async () => {
 	await updateThreads();
 };
 
-const shouldRedirect = (deletedThreadId: string) => {
-	return route.params.id === deletedThreadId;
-};
-
 const doDeleteThread = async (threadId: string) => {
 	console.log('deleting thread', threadId);
 	await api.thread.removeOne(threadId);
 
 	const newThreads = await updateThreads();
-	if (shouldRedirect(threadId)) {
+	if (route.params.id === threadId) {
 		const newThread = newThreads[0];
 		if (newThread) {
 			router.push(`/chat/${newThread.id}`);

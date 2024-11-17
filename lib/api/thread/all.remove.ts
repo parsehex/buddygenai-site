@@ -1,5 +1,5 @@
 import type { DeleteResponse } from '../types-api';
-import { useAppStore } from '@/src-preview/state';
+import { useAppStore } from '@/stores/main';
 
 export default async function removeAllThreads(
 	buddy_id: string

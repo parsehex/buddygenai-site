@@ -6,7 +6,7 @@ import {
 	AccordionContent,
 } from '@/components/ui/accordion';
 import { Input } from '@/components/ui/input';
-import { useAppStore } from '../../state';
+import { useAppStore } from '@/stores/main';
 import OptionSection from './OptionSection.vue';
 const store = useAppStore();
 

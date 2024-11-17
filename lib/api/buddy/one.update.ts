@@ -1,5 +1,5 @@
 import type { ChatThread, BuddyVersionMerged } from '@/lib/api/types-db';
-import { useAppStore } from '@/src-preview/state';
+import { useAppStore } from '@/stores/main';
 
 interface UpdateBuddyOptions {
 	id: string;

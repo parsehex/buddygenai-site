@@ -1,6 +1,6 @@
 import type { BuddyVersionMerged } from '@/lib/api/types-db';
 import buddies from '@/lib/data/buddies.json';
-import { useAppStore } from '@/src-preview/state';
+import { useAppStore } from '@/stores/main';
 
 interface CreateBuddyOptions {
 	name: string;

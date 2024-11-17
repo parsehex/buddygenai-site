@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { useAppStore } from '../../state';
+import { useAppStore } from '@/stores/main';
 import {
 	AccordionTrigger,
 	AccordionItem,

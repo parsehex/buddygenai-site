@@ -10,7 +10,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
-import { useAppStore } from '../stores/main';
+import { useAppStore } from '@/stores/main';
 import { Label } from '@/components/ui/label';
 
 const selectedBuddy = ref('');

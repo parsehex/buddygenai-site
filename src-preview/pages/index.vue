@@ -1,13 +1,13 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { formatDistanceToNow } from 'date-fns';
 import { ref, onMounted, computed } from 'vue';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import type { MergedChatThread } from '../types/db';
-import { useAppStore } from '../state';
-import BuddyAvatar from '../BuddyAvatar.vue';
-import { storeToRefs } from 'pinia';
+import type { MergedChatThread } from '@/lib/api/types-db';
+import BuddyAvatar from '@/components/BuddyAvatar.vue';
+import { useAppStore } from '../../stores/main';
 
 const store = useAppStore();
 const { buddies, settings, threads } = storeToRefs(store);
@@ -18,7 +18,6 @@ const userNameValue = ref(
 
 if (settings.value.user_name && settings.value.user_name !== 'User') {
 	userNameValue.value = settings.value.user_name;
-	console.log(settings.value);
 }
 
 const MaxMessageLength = 150;
@@ -59,17 +58,9 @@ const sortedThreads = computed(() => {
 </script>
 
 <template>
-	<!-- TODO remaining FTE -->
-	<!-- allow editing description (or something to fix broken generations) -->
-	<!-- instructions to acquire models -->
-
-	<!-- show spinner while chat is starting -->
-
 	<div v-if="threads.length" class="flex flex-col items-center px-4">
-		<!-- replace this with logo + BuddyGen AI in left corner -->
 		<h1 class="text-xl font-bold mb-2">
-			{{ store.newHere ? 'Welcome to' : '' }}
-			<div class="underline inline dark:bg-gray-600 p-1 rounded">
+			<div class="underline inline dark:bg-gray-600 p-1 rounded cursor-default">
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</div>
@@ -83,12 +74,10 @@ const sortedThreads = computed(() => {
 						:key="thread.id"
 						class="w-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors mb-1"
 					>
-						<!-- sort by latest first -->
 						<RouterLink
 							:to="`/chat/${thread.id}`"
 							class="w-full h-full flex items-center justify-start p-4"
 						>
-							<!-- TODO this is a good idea: show buddy info in thread list -->
 							<div>
 								<BuddyAvatar
 									v-if="thread.selected_buddy"
@@ -137,9 +126,7 @@ const sortedThreads = computed(() => {
 		</div>
 	</div>
 
-	<!-- TODO if there are no threads or buddies, offer to chat with AI Assistant or create a buddy -->
 	<p v-if="!threads.length && buddies.length" class="text-center mt-4">
-		<!-- TODO show the Assistant btn / Buddy Dropdown from sidebar here -->
 		You have no chats yet. Create one to get started!
 	</p>
 </template>

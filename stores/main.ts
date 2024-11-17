@@ -167,6 +167,15 @@ export const useAppStore = defineStore('app', () => {
 		},
 	});
 
+	const imgGenerating = ref(false);
+	const updateImgGenerating = (val: boolean) => {
+		imgGenerating.value = val;
+	};
+	const imgProgress = ref(0);
+	const updateImgProgress = (val: number) => {
+		imgProgress.value = val;
+	};
+
 	return {
 		selectedBuddyId,
 		threadMessages,
@@ -180,6 +189,10 @@ export const useAppStore = defineStore('app', () => {
 		threads,
 		newHere,
 		modelProvider,
+		imgGenerating,
+		updateImgGenerating,
+		imgProgress,
+		updateImgProgress,
 
 		updateModels,
 		updateBuddies,

@@ -1,6 +1,6 @@
 import type { DeleteResponse } from '@/lib/api/types-api';
 import { api } from '@/lib/api';
-import { useAppStore } from '@/src-preview/state';
+import { useAppStore } from '@/stores/main';
 
 export default async function removeOne(id: string): Promise<DeleteResponse> {
 	const store = useAppStore();

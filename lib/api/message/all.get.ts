@@ -4,12 +4,10 @@ import type {
 	Buddy,
 	BuddyVersion,
 } from '@/lib/api/types-db';
-import { AppSettings } from '@/lib/api/AppSettings';
-import { useAppStore } from '@/src-preview/state';
+import threads from '@/lib/data/threads.json';
 
 export default async function getAll(threadId: string): Promise<ChatMessage[]> {
-	const store = useAppStore();
-	const thread = store.threads.find((t) => t.id === threadId);
+	const thread = threads.find((t) => t.id === threadId) as ChatThread;
 	if (!thread) {
 		throw new Error(`thread ${threadId} not found`);
 	}

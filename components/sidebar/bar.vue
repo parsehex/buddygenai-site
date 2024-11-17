@@ -3,13 +3,13 @@ import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { useAppStore } from '../state';
+import { useAppStore } from '@/stores/main';
 import ThreadsList from './ThreadsList.vue';
 import BuddyList from './BuddyList.vue';
 import SettingsPanel from './settings/SettingsPanel.vue';
 import ColorMode from './ColorMode.vue';
 import { useToast } from '@/components/ui/toast';
-import type { BuddyVersionMerged } from '../types/db';
+import type { BuddyVersionMerged } from '@/lib/api/types-db';
 // import { api } from '@/lib/api';
 import BuddySelect from '../BuddySelect.vue';
 

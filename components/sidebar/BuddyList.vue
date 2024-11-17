@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, onBeforeMount } from 'vue';
 import { useRoute } from 'vue-router';
-import { router } from '../router';
-import type { BuddyVersionMerged } from '../types/db';
+import { router } from '@/lib/router';
+import type { BuddyVersionMerged } from '@/lib/api/types-db';
 import {
 	ContextMenu,
 	ContextMenuContent,
 	ContextMenuItem,
 	ContextMenuTrigger,
 } from '@/components/ui/context-menu';
-import { useAppStore } from '../state';
+import { useAppStore } from '@/stores/main';
 import { Button } from '@/components/ui/button';
 import BuddyAvatar from '../BuddyAvatar.vue';
 

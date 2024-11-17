@@ -1,5 +1,5 @@
 <template>
-	<div class="App">
+	<div class="App mx-auto">
 		<header class="App-header">
 			<!-- <div class="App-logo"></div> -->
 			<h1
@@ -17,37 +17,29 @@
 			</a>
 		</header>
 
-		<div class="App-body mt-2">
-			<div>
-				<div class="App-body-left-title">
-					<!--  -->
-				</div>
-				<!-- Cover TODO
+		<!-- Cover TODO
 				 use avatars from different img models -->
-				<img
-					src="/images/buddygen-itchio-cover.png"
-					class="mx-auto"
-					alt="cover"
-				/>
-				<p style="max-width: 35%; margin: 1em auto">
-					BuddyGenAI is an app for people that don't socialize much. It's meant
-					to emulate chatting with real people in a safe and private
-					environment.
-					<br />
-					It's a way to practice socializing, or just to have someone to talk
-					to. It's also a great way to get a second opinion on something, or to
-					get advice.
-				</p>
-			</div>
-		</div>
+		<img
+			src="/images/buddygen-itchio-cover.png"
+			class="mx-auto mt-3 w-2/5"
+			alt="cover"
+		/>
+		<p style="max-width: 65%; margin: 1em auto">
+			BuddyGenAI is an app for people that don't socialize often. It's meant to
+			emulate chatting with real people in a safe and private environment.
+			<br />
+			It's a way to practice socializing, or just to have someone to talk to.
+			It's also a great way to get a second opinion on something, or to get
+			advice.
+		</p>
 		<br />
 		<h2 class="text-2xl">Screenshots</h2>
 		<p>
-			You can
+			View the
 			<a href="/preview.html" class="text-blue-400 underline">
-				{{ 'view the app preview' }}
+				{{ 'app preview' }}
 			</a>
-			for a better experience.
+			for an interactive experience.
 		</p>
 		<br />
 		<Carousel class="relative w-full max-w-xmd">
@@ -141,6 +133,7 @@ body {
 .App {
 	text-align: center;
 	padding-bottom: 50px;
+	max-width: 75vw;
 }
 
 .App-logo {
@@ -155,10 +148,5 @@ body {
 	margin: 0.5em auto;
 	padding: 20px;
 	border-radius: 15%;
-}
-
-.App-body-left-title {
-	display: flex;
-	flex-direction: column;
 }
 </style>

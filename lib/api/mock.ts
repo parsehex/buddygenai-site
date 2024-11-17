@@ -2,7 +2,7 @@ import buddies from '@/lib/data/buddies.json';
 import models from '@/lib/data/models.json';
 import settings from '@/lib/data/settings.json';
 import threads from '@/lib/data/threads.json';
-import { useAppStore } from '@/src-preview/state';
+import { useAppStore } from '@/stores/main';
 
 // the goal here is to use the predefined data in the json files to
 //   simulate the populating of the store

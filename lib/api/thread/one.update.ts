@@ -1,5 +1,5 @@
 import type { ChatThread } from '@/lib/api/types-db';
-import { useAppStore } from '@/src-preview/state';
+import { useAppStore } from '@/stores/main';
 
 interface UpdateThreadOptions {
 	name?: string;

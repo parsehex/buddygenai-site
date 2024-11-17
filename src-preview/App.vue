@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Toaster } from '@/components/ui/toast';
-import { Sidebar } from './sidebar';
+import { Sidebar } from '@/components/sidebar';
 import {
 	ResizableHandle,
 	ResizablePanel,
@@ -13,7 +13,6 @@ import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 useColorMode();
 
-// TODO add strip at top that this is an incomplete preview
 // load chat thread(s) in first
 // then get chat replay working
 //   user starts with no threads
@@ -42,7 +41,12 @@ const container = ref<HTMLElement | null>(null);
 							<a href="/">Back to BuddyGenAI.com</a>
 						</AlertDescription>
 					</Alert>
-					<ResizablePanelGroup direction="horizontal">
+					<ResizablePanelGroup
+						direction="horizontal"
+						:style="{
+							height: '92vh',
+						}"
+					>
 						<ResizablePanel
 							class="min-w-min"
 							:default-size="22"
