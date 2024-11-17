@@ -3,34 +3,40 @@
 		<header class="App-header">
 			<!-- <div class="App-logo"></div> -->
 			<h1
-				class="text-4xl font-bold select-none my-2 bg-gray-600 inline-block mt-0 rounded-b px-1"
+				class="text-4xl font-bold select-none mb-2 bg-gray-600 inline-block rounded-b px-1 pb-2"
 			>
 				<span style="color: #61dafb">BuddyGen</span>
 				<span style="color: #111">AI</span>
 			</h1>
+			<br />
+			<a
+				href="/preview.html"
+				class="bg-gray-600 p-1 px-2 font-bold rounded text-blue-400"
+			>
+				View App Preview
+			</a>
 		</header>
 
-		<div class="App-body">
+		<div class="App-body mt-2">
 			<div>
 				<div class="App-body-left-title">
 					<!--  -->
 				</div>
+				<!-- Cover TODO
+				 use avatars from different img models -->
 				<img
 					src="/images/buddygen-itchio-cover.png"
 					class="mx-auto"
 					alt="cover"
 				/>
 				<p style="max-width: 35%; margin: 1em auto">
-					BuddyGen AI is an app for people that don't do much socializing. It's
-					meant to emulate chatting with real people in a safe environment.
+					BuddyGen AI is an app for people that don't socialize much. It's meant
+					to emulate chatting with real people in a safe and private
+					environment.
 					<br />
 					It's a way to practice socializing, or just to have someone to talk
 					to. It's also a great way to get a second opinion on something, or to
 					get advice.
-					<br />
-					<a href="/preview.html" class="bg-gray-600 p-1 rounded">
-						App Preview
-					</a>
 				</p>
 			</div>
 		</div>
