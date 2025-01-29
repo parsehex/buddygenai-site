@@ -180,7 +180,10 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui'
+import { useColorMode } from '@vueuse/core'
 import { ref } from 'vue'
+
+useColorMode();
 
 const pics = [
   '/images/logo-cover.png',
