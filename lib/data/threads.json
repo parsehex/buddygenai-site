@@ -22,7 +22,7 @@
 				"id": "2",
 				"created": 0,
 				"role": "assistant",
-				"content": "Hey there! I'm Eric, your personal assistant. How can I help you today?",
+				"content": "nm, you?",
 				"image": "",
 				"tts": "",
 				"thread_id": "1",
@@ -54,6 +54,49 @@
 			"image": "",
 			"tts": "",
 			"thread_id": "1",
+			"thread_index": 1
+		}
+	},
+	{
+		"id": "2",
+		"created": 0,
+		"name": "Chat with AI Assistant",
+		"persona_id": null,
+		"current_persona_version_id": null,
+		"mode": "custom",
+		"persona_mode_use_current": true,
+		"messages": [
+			{
+				"id": "1",
+				"created": 0,
+				"role": "user",
+				"content": "Hi, I'm looking for a new car.",
+				"image": "",
+				"tts": "",
+				"thread_id": "1",
+				"thread_index": 0
+			},
+			{
+				"id": "2",
+				"created": 0,
+				"role": "assistant",
+				"content": "Okay",
+				"image": "",
+				"tts": "",
+				"thread_id": "1",
+				"thread_index": 1
+			}
+		],
+		"selected_buddy": null,
+		"latest_message": {
+			"id": "2",
+			"created": 0,
+			"updated": 0,
+			"role": "assistant",
+			"content": "",
+			"image": "",
+			"tts": "",
+			"thread_id": "2",
 			"thread_index": 1
 		}
 	}
