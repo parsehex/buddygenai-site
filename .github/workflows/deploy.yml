@@ -42,6 +42,7 @@ jobs:
         with:
           name: production-files
           path: ./dist
+          pattern: ./dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
