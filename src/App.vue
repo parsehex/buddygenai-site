@@ -24,7 +24,7 @@
             your characters to life with the power of language models. </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
-              <a href="https://app.buddygenai.com">Try it Now</a>
+              <a href="https://app.buddygenai.com">Go to app →</a>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <a href="#features">Learn More</a>
