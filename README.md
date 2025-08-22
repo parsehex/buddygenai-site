@@ -1,4 +1,4 @@
-# BuddyGenAI Site
+# buddyGenAI Site
 
 ![logo](./src/logo.png)
 
@@ -28,7 +28,7 @@ git add .
 git commit -m "init vite project"
 ```
 
-* https://vitejs.dev/guide/#scaffolding-your-first-vite-project
+- https://vitejs.dev/guide/#scaffolding-your-first-vite-project
 
 ### Create a new GitHub repository
 
@@ -113,21 +113,21 @@ git commit -m "add deploy workflow"
 git push
 ```
 
-When you go, to [Actions](https://github.com/sitek94/vite-deploy-demo/actions) and click on the recent workflow, 
+When you go, to [Actions](https://github.com/sitek94/vite-deploy-demo/actions) and click on the recent workflow,
 you should see that it failed, because of missing permissions:
 
 ![Screen Shot 2022-05-15 at 16 33 13](https://user-images.githubusercontent.com/58401630/168478218-93f9fda7-91ff-49fb-b96c-8aa5e682ef70.png)
 
 ### Ensure Actions have `write` permission
 
-To fix that, go to [Actions Settings](https://github.com/sitek94/vite-deploy-demo/settings/actions), 
+To fix that, go to [Actions Settings](https://github.com/sitek94/vite-deploy-demo/settings/actions),
 select **Read and write permissions** and hit **Save**:
 
 <img width="844" alt="Screen Shot 2022-05-15 at 16 35 37" src="https://user-images.githubusercontent.com/58401630/168478314-c11c7c49-eeeb-411c-8351-9dd2b7423681.png">
 
 Basically, our action is going to modify the repo, so it needs the _write_ permission.
 
-Go back to [Actions](https://github.com/sitek94/vite-deploy-demo/actions), click on failed workflow 
+Go back to [Actions](https://github.com/sitek94/vite-deploy-demo/actions), click on failed workflow
 and in the top-right corner click on **Re-run failed jobs**
 
 ![Screen Shot 2022-05-15 at 16 41 29](https://user-images.githubusercontent.com/58401630/168478612-3a129490-4191-4380-9eec-f51f31b77720.png)
@@ -155,7 +155,7 @@ You will see that something is not right, because instead of there is a blank sc
 
 ![Screen Shot 2022-05-15 at 17 11 42](https://user-images.githubusercontent.com/58401630/168479964-7a0c6b8e-3be5-4468-af24-a09e13d800b1.png)
 
-This is happening, because of the subdirectory-like URL structure GitHub uses for Project Pages. Asset links are referencing the files 
+This is happening, because of the subdirectory-like URL structure GitHub uses for Project Pages. Asset links are referencing the files
 in the domain root, whereas our project is located in `<ROOT>/vite-deploy/demo`. This is how the links should look like:
 
 ```
@@ -181,7 +181,7 @@ export default defineConfig({
 
 Now, asset links will have a correct path, so commit the changes, push the code, wait for the deploy to finish and see it for yourself!
 
-### Final 
+### Final
 
 ![Screen Shot 2022-05-15 at 17 31 23](https://user-images.githubusercontent.com/58401630/168480802-95978d6c-2532-49f0-b118-6a313286d512.png)
 

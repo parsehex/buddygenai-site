@@ -4,13 +4,13 @@
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center">
-          <img src="/images/logo.png" alt="BuddyGenAI Logo" class="h-8 w-8 mr-2" />
-          <span class="text-xl font-bold">BuddyGenAI</span>
+          <img src="/images/logo.png" alt="buddyGenAI Logo" class="h-8 w-8 mr-2" />
+          <span class="text-xl font-bold">buddyGenAI</span>
         </div>
         <div class="flex items-center space-x-4">
           <!-- <a href="https://docs.buddygenai.com" class="hover:text-primary">Docs</a> -->
           <Button asChild>
-            <a href="https://github.com/parsehex/BuddyGenAI" target="_blank" class="font-semibold"> GitHub → </a>
+            <a href="https://github.com/parsehex/buddyGenAI" target="_blank" class="font-semibold"> GitHub → </a>
           </Button>
         </div>
       </div>
@@ -90,7 +90,7 @@
         </CardHeader>
         <CardContent>
           <div class="space-y-4">
-            <p> BuddyGenAI is an early release project with the following features and considerations: </p>
+            <p> buddyGenAI is an early release project with the following features and considerations: </p>
             <ul class="list-disc list-inside space-y-2">
               <li>OpenRouter account is required to use chat</li>
               <li>Local browser storage using IndexedDB</li>
@@ -112,9 +112,9 @@
     <!-- Footer -->
     <footer class="container mx-auto px-6 py-8 border-t">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="text-sm text-gray-600 dark:text-gray-400"> © 2024 - 2025 BuddyGenAI. All rights reserved. </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400"> © 2024 - 2025 buddyGenAI. All rights reserved. </div>
         <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="https://github.com/parsehex/BuddyGenAI"
+          <a href="https://github.com/parsehex/buddyGenAI"
             class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary"> GitHub </a>
           <!-- <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">
             Discord
